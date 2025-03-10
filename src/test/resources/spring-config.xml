@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean id="myTestBean" name="myTestBeanName" class="com.MyTestBean" scope="prototype">
+        <meta key="testStr" value="aaaaaa"/>
+        <constructor-arg index="0">
+            <value>刘凯</value>
+        </constructor-arg>
+        <constructor-arg index="1">
+            <value>你好</value>
+        </constructor-arg>
+    </bean>
+
+    <bean id="testBean" class="com.MyTestBean"/>
+
+    <bean id="car" class="com.CarFactoryBean">
+        <property name="carInfo" value="111,111,111"/>
+    </bean>
+
+</beans>
