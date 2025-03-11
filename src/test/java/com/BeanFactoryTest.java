@@ -16,11 +16,14 @@ public class BeanFactoryTest {
     public void springTest() {
         BeanFactory beanFactory = new XmlBeanFactory(new ClassPathResource("spring-config.xml", this.getClass().getClassLoader()));
 
-        MyTestBean myTestBean = (MyTestBean) beanFactory.getBean("myTestBean");
+        beanFactory.getBean("myTestBean");
 
-        CarFactoryBean car2 = (CarFactoryBean) beanFactory.getBean("&car");
+        beanFactory.getBean("myTestBean");
 
-        Car car1 = (Car) beanFactory.getBean("car");
+        beanFactory.getBean("&car");
+
+        beanFactory.getBean("car");
+
 
     }
 
